@@ -1,8 +1,4 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using ProEventos.Domain.Enums;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
 namespace ProEventos.Domain.Identity

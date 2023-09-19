@@ -3273,11 +3273,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.API\\ProEventos.API.csproj",
+      "projectUniqueName": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.API\\ProEventos.API.csproj",
       "projectName": "ProEventos.API",
-      "projectPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.API\\ProEventos.API.csproj",
+      "projectPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.API\\ProEventos.API.csproj",
       "packagesPath": "C:\\Users\\Arlei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.API\\obj\\",
+      "outputPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3298,8 +3298,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.Application\\ProEventos.Application.csproj": {
-              "projectPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.Application\\ProEventos.Application.csproj"
+            "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.Application\\ProEventos.Application.csproj": {
+              "projectPath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.Application\\ProEventos.Application.csproj"
             }
           }
         }

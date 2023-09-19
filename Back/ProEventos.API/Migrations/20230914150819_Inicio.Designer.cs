@@ -11,8 +11,8 @@ using ProEventos.Persistence.Contexto;
 namespace ProEventos.API.Migrations
 {
     [DbContext(typeof(EventosContext))]
-    [Migration("20230904163405_Identity")]
-    partial class Identity
+    [Migration("20230914150819_Inicio")]
+    partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

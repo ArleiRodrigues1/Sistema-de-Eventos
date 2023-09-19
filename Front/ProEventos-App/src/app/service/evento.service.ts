@@ -1,8 +1,15 @@
-import { Evento } from './../models/Evento';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+// RXJS IMPORTS
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+
+// ANGULAR IMPORTS
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+// MODELS IMPORT
+import { Evento } from './../models/Evento';
+
+// ENVINRONMENT IMPORT
 import { environment } from '../../environments/environment';
 
 @Injectable(

@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using ProEventos.Domain.Identity;
 
 namespace ProEventos.Application.Dtos
 {
@@ -11,8 +9,6 @@ namespace ProEventos.Application.Dtos
         public string DataEvento { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigtório."),
-         //MinLength(3, ErrorMessage = "{0} deve ter no mínimo 4 caracteres."),
-         //MaxLength(50, ErrorMessage = "{0} deve ter no máximo 50 caracteres.")
          StringLength(50, MinimumLength = 3,
                           ErrorMessage = "Intervalo permitido de 3 a 50 caracteres.")]
         public string Tema { get; set; }

@@ -24,23 +24,23 @@ namespace ProEventos.API.Controllers
             _tokenService = tokenService;
         }
         
-        [HttpGet("GetUser/{userName}")]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetUser(string userName)
+        [HttpGet("GetUser")]
+        public async Task<IActionResult> GetUser()
         {
             try
             {
+                var userName = User.GetUserName();
                 var user = await _accountService.GetUserByUserNameAsync(userName);
                 return Ok(user);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
                     $"Erro ao tentar recuperar Usuário. Erro: {ex.Message}");
             }
         }
 
-        [HttpPost("Insert")]
+        [HttpPost("Register")]
         [AllowAnonymous]
         public async Task<IActionResult> InsertUser(UserDto userDto)
         {
@@ -51,7 +51,14 @@ namespace ProEventos.API.Controllers
 
                 var user = await _accountService.CreateAccountAsync(userDto);
                 if(user != null)
-                return Ok(user);
+
+                 return Ok(new {
+                    nome = user.Nome,
+                    userName = user.UserName,
+                    password = user.Password,
+                    email = user.Email,
+                    token  = _tokenService.CreateToken(user).Result
+                });
 
                 return BadRequest("Usuário não criado, tente novamente mais tarde!");
             }
@@ -75,7 +82,7 @@ namespace ProEventos.API.Controllers
                 if(!result.Succeeded) return Unauthorized();
 
                 return Ok(new {
-                    userName = user.Username,
+                    userName = user.UserName,
                     user.Nome,
                     token  = _tokenService.CreateToken(user).Result
                 });
@@ -87,19 +94,26 @@ namespace ProEventos.API.Controllers
             }
         }
 
-        [HttpPut("UpdateUser")]
-        [AllowAnonymous]
+       [HttpPut("UpdateUser")]
         public async Task<IActionResult> UpdateUser(UserUpdateDto userUpdateDto)
         {
             try
             {
+                if (userUpdateDto.UserName != User.GetUserName())
+                    return Unauthorized("Usuário Inválido");
+
                 var user = await _accountService.GetUserByUserNameAsync(User.GetUserName());
                 if (user == null) return Unauthorized("Usuário Inválido");
 
                 var userReturn = await _accountService.UpdateAccount(userUpdateDto);
                 if (userReturn == null) return NoContent();
 
-                return Ok(userReturn);
+                return Ok(new
+                {
+                    userName = userReturn.UserName,
+                    nome = userReturn.Nome,
+                    token = _tokenService.CreateToken(userReturn).Result
+                });
             }
             catch (Exception ex)
             {

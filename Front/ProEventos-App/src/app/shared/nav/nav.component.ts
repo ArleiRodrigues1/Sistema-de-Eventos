@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit} from '@angular/core';
+import { AccountService } from 'src/app/service/account.service';
 
 @Component({
     selector: 'app-nav',
@@ -9,13 +10,17 @@ import { Component, OnInit} from '@angular/core';
 
 export class NavComponent implements OnInit {
     
-    constructor( private router: Router){
-       
-    }
-
+    constructor(public accountService: AccountService,
+                private router: Router) {}
+                
     ngOnInit(): void {}
 
-    showMenu(): boolean{
-        return this.router.url !== '/user/login';
+    public showMenu(): boolean{
+        return this.router.url !== '/user/login' && this.router.url !== '/user/registration';
+    }
+
+    public logout(): void {
+        this.accountService.logout();
+        this.router.navigateByUrl('/user/login');
     }
 }

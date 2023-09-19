@@ -10,7 +10,9 @@ import { RegistrationComponent } from './components/user/registration/registrati
 import { LoginComponent } from './components/user/login/login.component';
 import { PerfilComponent } from './components/user/perfil/perfil.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
+import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
 
+import { Auth } from './guard/auth.guard';
 
 
 const routes: Routes = [
@@ -44,10 +46,11 @@ const routes: Routes = [
   },
 
 
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [Auth], },
 
+  { path: 'palestrantes', component: PalestrantesComponent, canActivate: [Auth], },
 
-  { path: 'contatos', component: ContatosComponent },
+  { path: 'contatos', component: ContatosComponent, canActivate: [Auth], },
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   

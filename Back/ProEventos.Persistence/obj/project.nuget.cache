@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "adCD0bzQqEcu1KtHdaeBrQrlD/vYEiEdnh8Y0yCmEWCwe3KxwyWazjwzsCl/Vns77HLYdnVzXSpP6tESg3kI4g==",
+  "dgSpecHash": "b5KphXEw5b3DCVlTsamk0tN9AAfrN0iHR92evGU0NdK2aadrhDXk4U5LipB8EXH4+I3/08DSbCWsyR8hAK0cxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\back\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\Arlei\\Documents\\Eventos\\ProEventos\\Back\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arlei\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Arlei\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
